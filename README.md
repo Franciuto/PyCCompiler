@@ -3,7 +3,6 @@
 
 **PyCCompiler** is a Python script for compiling C source files using the GCC compiler. The script is designed to work on both Windows and Unix-like systems (Linux, macOS, etc.) and offers features such as cross-platform compilation for Windows from Linux systems, warning management, and support for MinGW ANSI Studio.
 
----
 
 ## Key Features
 
@@ -13,8 +12,6 @@
 - **Support for MinGW ANSI Studio**: Compatibility with MinGW ANSI Studio on Windows systems.
 - **User-Friendly Interface**: Interactive input to guide users through the compilation process.
 
----
-
 ## Requirements
 
 To use **PyCCompiler**, make sure you have the following tools installed:
@@ -23,7 +20,6 @@ To use **PyCCompiler**, make sure you have the following tools installed:
 - **GCC (GNU Compiler Collection)**: Required to compile C source files.
 - **x86_64-w64-mingw32-gcc** (only for cross-platform compilation): If you want to compile for Windows from a Linux system, install this package for your distrubution.
 
----
 
 ## Installation and usage
 
