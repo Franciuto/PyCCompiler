@@ -3,8 +3,8 @@ import platform
 import re
 
 # TITLE
-title =  "Franciuto's C Compiler\nVersion 1.0\n"
-print(title)
+version = "1.0"
+print(f"Franciuto's C Compiler\nVersion {version}\n")
 
 # SYSTEM IN USE
 system = platform.system().lower()
