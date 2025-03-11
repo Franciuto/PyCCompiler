@@ -42,6 +42,18 @@ global standard_ansi
 standard_ansi = input("Use MinGW ANSI Studio compatibility (y/n): ")
 show_warnings = show_warnings == "y"
 
+# ASK FOR OPTIMIZATION
+global optimization
+optimization = input("Optimization:\n1. Basic\n2. Medium\n3. Advanced\n------\n4. Compression\n5. Maximum optimization (use with caution)\n6. No optimization\nChoose option: ")
+# Check if option is correct
+while not optimization in ["1","2","3","4","5","6"]:
+	optimization = input("Option not valid!\nOptimization:\n1. Basic\n2. Medium\n3. Advanced\n------\n4. Compression\n5. Maximum optimization (use with caution)\n6. No optimization\nChoose option: ")
+
+# ASK FOR DEBUGGING
+global debugging
+debugging = input("Compile for debugging (y/n): ")
+debugging = debugging == "y"
+
 # Basic command
 command = (f'gcc {filename}')
 
@@ -52,7 +64,23 @@ def run (command, output, arguments = ""):
 		command += " -Wall -Wextra"
 	if standard_ansi and system == "windows":
 		command += " -D_USE_MINGW_ANSI_STUDIO"
-	
+	# Optimization
+	match optimization:
+		case "1":
+			command += " -O1"
+		case "2":
+			command += " -O2"
+		case "3":
+			command += " -O3"
+		case "4":
+			command += " -Os"
+		case "5":
+			command += " -Ofast"
+		case "6":
+			pass
+	# Debugging
+	if debugging:
+		command += " -g"
 	# Code execution
 	execution = os.system(command)
 	if execution == 0:
